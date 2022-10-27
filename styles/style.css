@@ -1,0 +1,61 @@
+body {
+  background-color: hsl(120, 40%, 80%);
+  font-family: "Open Sans","Helvetica",Arial,sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+#reviews {
+  padding: 1.5rem;
+}
+
+#columns {
+  columns: 20em;
+}
+
+#columns .card {
+  background-clip: border-box;
+  background-color: Snow;
+  border-radius: 1rem;
+  box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: transform .3s cubic-bezier(.34,2,.6,1),box-shadow .2s ease;
+  z-index: 1;
+}
+
+#columns .card:hover {
+  box-shadow: 0px 12px 19px -7px rgba(0,0,0,.3);
+}
+
+.card .author {
+  align-items: center;
+  display: flex;
+}
+
+.card .author figure {
+  margin-inline-end: 1rem;
+  margin-inline-start: 1rem;
+}
+
+.card .author .avatar {
+  border-radius: 0.5rem;
+  height: 5rem;
+  width: 5rem;
+}
+
+.card .text {
+  padding: 0 1rem;
+}
+
+.card .text p {
+  margin-block-start: 0;
+  margin-top: -13px;
+}
+
+.card .text .date {
+  text-align: right;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
