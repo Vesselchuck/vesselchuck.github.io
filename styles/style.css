@@ -1,22 +1,70 @@
 @import url("https://fonts.googleapis.com/css2?family=Ledger&family=Neucha&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 body {
-  background-color: #DDC4DD;
+  background: repeat url(../assets/bg.webp);
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
   margin: 0;
-  text-align: left;
+}
+
+/* Header */
+
+.header {
+  align-items: center;
+  background-color: #393D3F;
+  box-shadow: 0px 12px 19px -7px rgba(0,0,0,.3);
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 4rem;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header .logo {
+  color: snow;
+  flex-grow: 1;
+  padding-left: 2rem;
+}
+
+.header li {
+  display: inline;
+  padding-right: 2rem;
+}
+
+.header li a {
+  color: snow;
+  text-decoration: none;
+  transition: all 0.15s ease-in;
+}
+
+.header li a:hover {
+  color: #FFB86F;
+  text-shadow: 0 0 1.5rem #FFB86F;
+  text-decoration: underline;
 }
 
 #reviews {
-  padding: 1.5rem;
+  padding: 1rem;
+  margin-top: 4rem;
 }
 
 #columns {
   columns: 20em;
 }
 
-#columns .card {
+#columns h1 {
+  text-align: center;
+}
+
+#contacts {
+  width: 70em;
+  margin: auto;
+}
+
+.card {
   background-clip: border-box;
   background-color: snow;
   border-radius: 1rem;
@@ -27,8 +75,32 @@ body {
   z-index: 1;
 }
 
-#columns .card:hover {
+.card:hover {
   box-shadow: 0px 12px 19px -7px rgba(0,0,0,.3);
+}
+
+.flex {
+  display: flex;
+}
+
+#contact-page .school-section .contact-card {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.phone {
+  min-width: 12rem;
+}
+
+.card .card-image {
+  margin-bottom: -0.5rem;
+  min-width: 35em;
+}
+
+.card .card-image img {
+  width: 35em;
 }
 
 .card .author {
@@ -47,8 +119,13 @@ body {
   width: 5rem;
 }
 
-.card .author .title {
+.card .title {
   font-family: "Ledger", serif;
+  margin-right: 1rem;
+}
+
+.contact-card .title {
+  margin-left: 1rem;
 }
 
 .card .text {
@@ -58,6 +135,15 @@ body {
 .card .text p {
   margin-block-start: 0;
   margin-top: -13px;
+}
+
+.card .text a {
+  color: #058ED9;
+  text-decoration: none;
+}
+
+.card .about .text p {
+  margin-top: 1rem;
 }
 
 .card .text .date {
