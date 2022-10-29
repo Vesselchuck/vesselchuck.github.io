@@ -59,7 +59,7 @@ body {
   text-align: center;
 }
 
-#contacts {
+#main {
   width: 70em;
   margin: auto;
 }
@@ -122,6 +122,35 @@ body {
 .card .title {
   font-family: "Ledger", serif;
   margin-right: 1rem;
+}
+
+#main .card.main-card {
+  background: no-repeat url(../assets/main.webp) right/52%;
+  background-color: snow;
+}
+
+.main-card .about .text .one {
+  padding-right: 34em;
+}
+
+.main-card .about .text ul {
+  padding-right: 0;
+}
+
+.main-card .about .text .two {
+  padding-right: 31em;
+}
+
+.main-card .about .text .three {
+  padding-right: 26em;
+}
+
+.main-card .about .text .four {
+  padding-right: 33em;
+}
+
+.main-card .about .text .five {
+  padding-right: 35em;
 }
 
 .contact-card .title {
