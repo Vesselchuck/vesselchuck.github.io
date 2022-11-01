@@ -136,16 +136,13 @@ blockquote {
   background-color: snow;
 }
 
-.main-card .card-body .text p {
+.main-card .card-body .text p,
+.contact-card .text .info {
   margin-top: 1rem;
 }
 
 .main-card .text .one {
   padding-right: 34em;
-}
-
-.main-card .text ul {
-  padding-right: 0;
 }
 
 .main-card .text .two {
@@ -172,21 +169,13 @@ blockquote {
   padding: 0 1rem;
 }
 
-.card .text p {
-  margin-block-start: 0;
-  margin-top: -13px;
-}
-
-.contact-card .text .info {
-  margin-top: 1rem;
-}
-
 .card .text a {
   color: #058ED9;
   text-decoration: none;
 }
 
-.card .h-card.vcard .text {
+.card .h-card.vcard .text,
+.card .text p {
   margin-block-end: 1em;
   margin-block-start: 0;
   margin-top: -13px;
