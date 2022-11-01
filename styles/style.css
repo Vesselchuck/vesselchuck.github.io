@@ -136,27 +136,31 @@ blockquote {
   background-color: snow;
 }
 
-.main-card .about .text .one {
+.main-card .card-body .text p {
+  margin-top: 1rem;
+}
+
+.main-card .text .one {
   padding-right: 34em;
 }
 
-.main-card .about .text ul {
+.main-card .text ul {
   padding-right: 0;
 }
 
-.main-card .about .text .two {
+.main-card .text .two {
   padding-right: 31em;
 }
 
-.main-card .about .text .three {
+.main-card .text .three {
   padding-right: 26em;
 }
 
-.main-card .about .text .four {
+.main-card .text .four {
   padding-right: 33em;
 }
 
-.main-card .about .text .five {
+.main-card .text .five {
   padding-right: 35em;
 }
 
@@ -173,6 +177,10 @@ blockquote {
   margin-top: -13px;
 }
 
+.contact-card .text .info {
+  margin-top: 1rem;
+}
+
 .card .text a {
   color: #058ED9;
   text-decoration: none;
@@ -182,10 +190,6 @@ blockquote {
   margin-block-end: 1em;
   margin-block-start: 0;
   margin-top: -13px;
-}
-
-.card .about .text p {
-  margin-top: 1rem;
 }
 
 .card .date {
