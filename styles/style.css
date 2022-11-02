@@ -46,9 +46,7 @@ body {
   text-shadow: 0 0 1.5rem #FFB86F;
 }
 
-.header .fa-house-user,
-.header .fa-star,
-.header .fa-phone {
+.header i {
   color: #058ED9;
 }
 
