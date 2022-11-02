@@ -21,6 +21,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 2;
 }
 
 .header .logo {
@@ -32,12 +33,12 @@ body {
 .header li {
   display: inline;
   padding-right: 2rem;
-  transition: all 0.15s ease-in;
 }
 
 .header li a {
   color: snow;
   text-decoration: none;
+  transition: all 0.15s ease-in;
 }
 
 .header li a:hover {
@@ -52,21 +53,17 @@ body {
 }
 
 #reviews {
-  padding: 1rem;
+  padding: 0.85%;
   margin-top: 4rem;
 }
 
-#columns {
-  columns: 20em;
-}
-
-#columns h1 {
-  text-align: center;
-}
-
 #main {
-  width: 70em;
+  width: 70rem;
   margin: auto;
+}
+
+abbr:hover {
+  color: #DB3A34;
 }
 
 .card {
@@ -74,7 +71,6 @@ body {
   background-color: snow;
   border-radius: 1rem;
   box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
-  margin-bottom: 1rem;
   overflow: hidden;
   transition: transform .3s cubic-bezier(.34,2,.6,1),box-shadow .2s ease;
   z-index: 1;
@@ -95,6 +91,19 @@ blockquote {
   display: flex;
 }
 
+.grid-item {
+  margin-bottom: 0.85%;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 23.957%;
+}
+
+.gutter-sizer {
+  width: 1.25%;
+}
+
 #contact-page .school-section .contact-card {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -103,20 +112,21 @@ blockquote {
 }
 
 .phone {
-  min-width: 12rem;
+  min-width: 14rem;
 }
 
 .card .card-image {
   margin-bottom: -0.5rem;
-  min-width: 35em;
+  min-width: 35rem;
 }
 
 .card .card-image img {
-  width: 35em;
+  width: 35rem;
+  height: 24.06rem;
 }
 
 .card .fa-solid {
-  color: #DE1A1A;
+  color: #DB3A34;
 }
 
 .card .author {
@@ -141,7 +151,7 @@ blockquote {
 }
 
 #main .card.main-card {
-  background: no-repeat url(../assets/main.webp) right/52%;
+  background: no-repeat url(../assets/main.webp) right/51.9%;
   background-color: snow;
 }
 
@@ -151,23 +161,23 @@ blockquote {
 }
 
 .main-card .text .one {
-  padding-right: 34em;
+  padding-right: 34rem;
 }
 
 .main-card .text .two {
-  padding-right: 31em;
+  padding-right: 31rem;
 }
 
 .main-card .text .three {
-  padding-right: 27em;
+  padding-right: 27rem;
 }
 
 .main-card .text .four {
-  padding-right: 33em;
+  padding-right: 33rem;
 }
 
 .main-card .text .five {
-  padding-right: 35em;
+  padding-right: 35rem;
 }
 
 .contact-card .title {
@@ -189,7 +199,7 @@ blockquote {
 
 .card .h-card.vcard .text,
 .card .text p {
-  margin-block-end: 1em;
+  margin-block-end: 1rem;
   margin-block-start: 0;
   margin-top: -13px;
 }
