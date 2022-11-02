@@ -32,18 +32,23 @@ body {
 .header li {
   display: inline;
   padding-right: 2rem;
+  transition: all 0.15s ease-in;
 }
 
 .header li a {
   color: snow;
   text-decoration: none;
-  transition: all 0.15s ease-in;
 }
 
 .header li a:hover {
   color: #FFB86F;
   text-shadow: 0 0 1.5rem #FFB86F;
-  text-decoration: underline;
+}
+
+.header .fa-house-user,
+.header .fa-star,
+.header .fa-phone {
+  color: #058ED9;
 }
 
 #reviews {
@@ -110,6 +115,10 @@ blockquote {
   width: 35em;
 }
 
+.card .fa-solid {
+  color: #DE1A1A;
+}
+
 .card .author {
   align-items: center;
   display: flex;
@@ -172,6 +181,10 @@ blockquote {
 .card .text a {
   color: #058ED9;
   text-decoration: none;
+}
+
+.card .text a:hover {
+  color: hsl(201, 95%, 30%);
 }
 
 .card .h-card.vcard .text,
