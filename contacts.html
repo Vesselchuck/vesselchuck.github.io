@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet/less" type="text/css" href="styles/style.less" />
+  <script src="scripts/less.min.js" type="text/javascript"></script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,13 +40,13 @@
       </li> -->
 
       <li>
-        <a href="https://vesselchuck.github.io">
+        <a href="">
           <i class="fa-solid fa-house-user"></i>
           <span>ГЛАВНАЯ</span>
         </a>
       </li>
       <li>
-        <a href="https://vesselchuck.github.io/reviews">
+        <a href="/reviews">
           <i class="fa-solid fa-star"></i>
           <span>ОТЗЫВЫ</span>
         </a>
@@ -61,75 +62,73 @@
   </nav>
 
   <!-- Review Columns -->
-  <section id="reviews">
-    <div id="main">
+  <section id="main">
 
-      <!-- Review -->
-      <div id="contact-card" class="card flex">
-        <div class="card-image">
-            <img src="assets/gb-flag.webp" alt="Флаг Великобритании «Юнион Джек»" title="Флаг Великобритании «Юнион Джек»">
+    <!-- Review -->
+    <div id="contact-card" class="card flex">
+      <div class="card-image">
+          <img src="assets/gb-flag.webp" alt="Флаг Великобритании «Юнион Джек»" title="Флаг Великобритании «Юнион Джек»">
+      </div>
+      <div class="card-body">
+
+        <div>
+          <div class="text">
+            <p class="info">Позвоните, либо же напишите мне, если желаете получить консультацию об отдельных вопросах или назначить пробное занятие. Во время этого занятия мы познакомимся, определим уровень знаний языка, а в дальнейшем будем планировать занятия под ваши нужды.</p>
+          </div>
         </div>
-        <div class="card-body">
 
-          <div>
-            <div class="text">
-              <p class="info">Позвоните, либо же напишите мне, если желаете получить консультацию об отдельных вопросах или назначить пробное занятие. Во время этого занятия мы познакомимся, определим уровень знаний языка, а в дальнейшем будем планировать занятия под ваши нужды.</p>
-            </div>
-          </div>
-
-          <div class="h-card vcard flex wrap">
-            <div class="phone">
-              <h3 class="title">
-                <i class="fa-solid fa-phone"></i>
-                <span>Телефон</span>
-              </h3>
-              <div class="text">
-                <a class="p-tel" href="tel:+79969760702">+7 996 976-07-02</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="title">
-                <i class="fa-solid fa-at"></i>
-                <span>Электронная почта</span>
-              </h3>
-              <div class="text">
-                <a class="u-email" href="mailto:vesselchuck.prime@gmail.com">vesselchuck.prime@gmail.com</a>
-              </div>
-            </div>
-
-            <div class="discord">
-              <h3 class="title">
-                <i class="fa-brands fa-discord"></i>
-                <span>Discord</span>
-              </h3>
-              <div class="text">
-                <a>Vesselchuck#8687</a>
-              </div>
-            </div>
-
-            <div>
-              <h3 class="title">
-                <i class="fa-brands fa-telegram"></i>
-                <span>Telegram</span>
-              </h3>
-              <div class="text">
-                <a href="https://t.me/Vesselchuck" target="_blank">https://t.me/Vesselchuck</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="work-time">
+        <div class="h-card vcard flex wrap">
+          <div class="phone">
             <h3 class="title">
-              <i class="fa-solid fa-clock"></i>
-              <span>Рабочие часы</span>
+              <i class="fa-solid fa-phone"></i>
+              <span>Телефон</span>
             </h3>
             <div class="text">
-              <p>Провожу занятия, в основном, с <strong>14:00</strong> и до <strong>21:00</strong> по московскому времени. Желательно, связываться со мной до или после этого периода времени, либо ограничится сообщением.</p>
+              <a class="p-tel" href="tel:+79969760702">+7 996 976-07-02</a>
             </div>
           </div>
 
+          <div>
+            <h3 class="title">
+              <i class="fa-solid fa-at"></i>
+              <span>Электронная почта</span>
+            </h3>
+            <div class="text">
+              <a class="u-email" href="mailto:vesselchuck.prime@gmail.com">vesselchuck.prime@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="discord">
+            <h3 class="title">
+              <i class="fa-brands fa-discord"></i>
+              <span>Discord</span>
+            </h3>
+            <div class="text">
+              <a>Vesselchuck#8687</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="title">
+              <i class="fa-brands fa-telegram"></i>
+              <span>Telegram</span>
+            </h3>
+            <div class="text">
+              <a href="https://t.me/Vesselchuck" target="_blank">https://t.me/Vesselchuck</a>
+            </div>
+          </div>
         </div>
+
+        <div class="work-time">
+          <h3 class="title">
+            <i class="fa-solid fa-clock"></i>
+            <span>Рабочие часы</span>
+          </h3>
+          <div class="text">
+            <p>Провожу занятия, в основном, с <strong>14:00</strong> и до <strong>21:00</strong> по московскому времени. Желательно, связываться со мной до или после этого периода времени, либо ограничится сообщением.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

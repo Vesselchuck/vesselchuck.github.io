@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Ledger&family=Neucha&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+body {
+  background: repeat url(../assets/interface/bg.webp);
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Header */
+
+.header {
+  align-items: center;
+  background-color: #393D3F;
+  box-shadow: 0px 12px 19px -7px rgba(0,0,0,.3);
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 4rem;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  .logo {
+    color: snow;
+    flex-grow: 1;
+    padding-left: 2rem;
+  }
+  li {
+    display: inline;
+    padding-right: 2rem;
+    a {
+      color: snow;
+      text-decoration: none;
+      transition: all 0.15s ease-in;
+    }
+    a:hover {
+      color: #FFB86F;
+      text-shadow: 0 0 1.5rem #FFB86F;
+    }
+  }
+  i {
+  color: #058ED9;
+  }
+}
+
+#main {
+  margin-top: 4rem;
+  padding: 0.85%;
+}
+
+#about-me-card {
+  background: no-repeat snow url(../assets/main.webp) right/51.9%;
+  margin: auto;
+  width: 70rem;
+}
+
+#contact-card {
+  margin: auto;
+  width: 70rem;
+  .info {
+    margin-top: 1rem;
+  }
+  .fa-solid,
+  .fa-brands {
+    color: #DB3A34;
+  }
+  .title {
+    margin-left: 1rem;
+  }
+  .h-card.vcard {
+    .text {
+    margin-block-end: 1rem;
+    margin-block-start: 0;
+    margin-top: -13px;
+    }
+  }
+  .phone {
+    min-width: 14rem;
+  }
+  .discord {
+    min-width: 14rem;
+  }
+}
+
+abbr:hover {
+  color: #DB3A34;
+}
+
+.card {
+  background-clip: border-box;
+  background-color: snow;
+  border-radius: 1rem;
+  box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+  overflow: hidden;
+  transition: transform .3s cubic-bezier(.34,2,.6,1),box-shadow .2s ease;
+  z-index: 1;
+  .author {
+    align-items: center;
+    display: flex;
+    .avatar {
+      border-radius: 0.5rem;
+      height: 5rem;
+      width: 5rem;
+    }
+    figure {
+      margin-inline-end: 1rem;
+      margin-inline-start: 1rem;
+    }
+  }
+  .date {
+    font-family: "Neucha", cursive;
+    margin-block-end: 1rem;
+    margin-block-start: 1rem;
+    padding-right: 1rem;
+    text-align: right;
+  }
+  .card-image {
+    margin-bottom: -0.5rem;
+    min-width: 35rem;
+    img {
+      height: 29.81rem;
+      width: 35rem;
+    }
+  }
+  .title {
+    font-family: "Ledger", serif;
+    margin-right: 1rem;
+  }
+  .text {
+    padding: 0 1rem;
+    a {
+      color: #058ED9;
+      text-decoration: none;
+    }
+    a:hover {
+      color: hsl(201, 95%, 30%);
+    }
+    p {
+      margin-block-end: 1rem;
+      margin-block-start: 0;
+      margin-top: -13px;
+    }
+    .first {
+      margin-top: 1rem;
+      padding-right: 34rem;
+    }
+    .second {
+      margin-top: 1rem;
+      padding-right: 31rem;
+    }
+    .third {
+      margin-top: 1rem;
+      padding-right: 27rem;
+    }
+    .fourth {
+      margin-top: 1rem;
+      padding-right: 33rem;
+    }
+    .fifth {
+      margin-top: 1rem;
+      padding-right: 35rem;
+    }
+  }
+}
+
+.card:hover {
+  box-shadow: 0px 12px 19px -7px rgba(0,0,0,.3);
+}
+
+blockquote {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  margin-bottom: 0.85%;
+}
+
+.grid-sizer,
+.grid-item {
+  width: 23.957%;
+}
+
+.gutter-sizer {
+  width: 1.25%;
+}
