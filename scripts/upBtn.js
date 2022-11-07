@@ -1,5 +1,5 @@
 window.onload = function(){
-  // Up Button
+  // Go Up Button
   const upBtn = document.querySelector("#upBtn")
 
   upBtn.addEventListener("click", function () {

@@ -1,14 +1,12 @@
 window.onload = function(){
   // Masonry Responsive
   $('.grid').masonry({
-    // options
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
-    gutter: '.gutter-sizer',
-    percentPosition: true
+    gutter: '.gutter-sizer'
   });
 
-  // Up Button
+  // Go Up Button
   const upBtn = document.querySelector("#upBtn")
 
   upBtn.addEventListener("click", function () {
