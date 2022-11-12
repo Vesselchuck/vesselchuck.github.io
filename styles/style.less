@@ -8,7 +8,6 @@ body {
 }
 
 /* Header */
-
 #header {
   align-items: center;
   background-color: #393D3F;
@@ -21,7 +20,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
   .logo {
     color: snow;
     flex-grow: 1;
@@ -51,13 +50,29 @@ body {
 }
 
 #review-form {
-  margin-top: -1rem;
-  margin-bottom: 1rem;
+  display: none;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+#reviewCloseBtnOut {
+  background-color: rgba(0, 0, 0, .5);
+  border: none;
+  display: none;
+  height: 100%;
+  left: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 #review-form-card {
   margin: auto;
-  width: 45.98rem;
+  z-index: 3;
   .info {
     margin-top: 1rem;
   }
@@ -67,23 +82,127 @@ body {
   .title {
     margin-left: 1rem;
   }
+  h2.title {
+    margin-bottom: 0.45rem;
+    margin-top: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
   #submit-review {
     .text {
       margin-block-end: 1rem;
       margin-block-start: 0;
       margin-top: -13px;
     }
-    #review-text {
-      width: 99.1%;
-      height: 6rem;
-    }
-  }
-  .form-full-name {
-    min-width: 20rem;
-    .text {
-      input {
-        width: 80%;
+
+    .form-full-name {
+      #review-full-name {
+        border-radius: 1rem;
+        border: 0.2rem solid #393D3F;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        height: 1.45rem;
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+        transition: transform .3s cubic-bezier(.34,2,.6,1), box-shadow .2s ease, border .2s ease, color .2s ease;
+        width: 12.75rem;
       }
+      #review-full-name:hover {
+        border: 0.2rem solid #FFB86F;
+        box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
+      }
+      #review-full-name:focus-visible {
+        border: 0.2rem solid hsl(30, 100%, 55%);
+        box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
+        outline: none;
+      }
+    }
+
+    .form-photo {
+      #review-photo {
+        cursor: pointer;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+      }
+      #review-photo::file-selector-button {
+        background-color: #393D3F;
+        border-radius: 1rem;
+        border: none;
+        color: snow;
+        cursor: pointer;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+        height: 2rem;
+        text-transform: uppercase;
+        transition: transform .3s cubic-bezier(.34,2,.6,1), box-shadow .2s ease, background-color .2s ease, color .2s ease;
+        width: 11rem;
+      }
+      #review-photo::file-selector-button:hover {
+        background-color: #FFB86F;
+        box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
+        color: #393D3F;
+      }
+      #review-photo::file-selector-button:active {
+        background-color: hsl(30, 100%, 55%);
+        box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
+        color: #393D3F;
+      }
+    }
+
+    .form-text {
+      #review-text {
+        border-radius: 1rem;
+        border: 0.2rem solid #393D3F;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        height: 11rem;
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+        resize: none;
+        transition: transform .3s cubic-bezier(.34,2,.6,1), box-shadow .2s ease, border .2s ease, color .2s ease;
+        width: 34.2rem;
+      }
+      #review-text:hover {
+        border: 0.2rem solid #FFB86F;
+        box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
+      }
+      #review-text:focus-visible {
+        border: 0.2rem solid hsl(30, 100%, 55%);
+        box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
+        outline: none;
+      }
+    }
+
+    #submit {
+      background-color: #393D3F;
+      border-radius: 1rem;
+      border: none;
+      color: snow;
+      cursor: pointer;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1rem;
+      font-weight: bold;
+      height: 3rem;
+      text-transform: uppercase;
+      transition: transform .3s cubic-bezier(.34,2,.6,1), box-shadow .2s ease, background-color .2s ease, color .2s ease;
+      width: 15rem;
+    }
+    #submit:hover {
+      background-color: #FFB86F;
+      box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
+      color: #393D3F;
+    }
+    #submit:active {
+      background-color: hsl(30, 100%, 55%);
+      box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
+      color: #393D3F;
+    }
+
+    .pos {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1.45rem;
+      width: fit-content;
     }
   }
 }
@@ -128,7 +247,7 @@ body {
   background-color: #393D3F;
   border-radius: 3rem;
   border: none;
-  bottom: 2rem;
+  bottom: 1.5rem;
   box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
   color: snow;
   cursor: pointer;
@@ -137,22 +256,56 @@ body {
   height: 3rem;
   padding-top: 0.3rem;
   position: fixed;
-  right: 2rem;
+  right: 1.5rem;
   transition: transform .3s cubic-bezier(.34,2,.6,1), box-shadow .2s ease, background-color .2s ease, color .2s ease;
   width: 3rem;
   z-index: 99;
 }
-
 #upBtn:hover {
   background-color: #FFB86F;
+  box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
   color: #393D3F;
-  box-shadow: 0px 12px 19px -7px rgba(0,0,0,.3);
 }
-
 #upBtn:active {
   background-color: hsl(30, 100%, 55%);
+  box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
   color: #393D3F;
-  box-shadow: 0px 12px 19px -7px rgba(0,0,0,.3);
+}
+
+#reviewBtn {
+  background-color: #393D3F;
+  border-radius: 3rem;
+  border: none;
+  bottom: 1.5rem;
+  color: snow;
+  cursor: pointer;
+  font-size: 1.5rem;
+  height: 3rem;
+  left: 1.5rem;
+  padding-top: 0.3rem;
+  position: fixed;
+  transition: transform .3s cubic-bezier(.34,2,.6,1), box-shadow .2s ease, background-color .2s ease, color .2s ease;
+  width: 3rem;
+  z-index: 99;
+}
+#reviewBtn:hover {
+  background-color: #FFB86F;
+  box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
+  color: #393D3F;
+}
+#reviewBtn:active {
+  background-color: hsl(30, 100%, 55%);
+  box-shadow: 0 0 19px -7px rgba(0,0,0,.3);
+  color: #393D3F;
+}
+
+#reviewCloseBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: -2.55rem 0 0 36.1rem;
+  position: fixed;
 }
 
 abbr:hover {
@@ -248,6 +401,11 @@ blockquote {
   display: flex;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+} 
+
 .wrap {
   flex-wrap: wrap;
 }
@@ -263,4 +421,9 @@ blockquote {
 
 .gutter-sizer {
   width: 1rem;
+}
+
+fieldset {
+  border: none;
+  padding: unset;
 }

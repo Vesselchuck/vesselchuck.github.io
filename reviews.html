@@ -2,33 +2,38 @@
 <html lang="ru">
 <head>
   <!-- LESS Compiler -->
-  <link rel="stylesheet/less" type="text/css" href="styles/style.less" />
+  <link href="styles/style.less" rel="stylesheet/less" type="text/css" />
   <script src="scripts/less.min.js" type="text/javascript"></script>
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Отзывы | Репетитор Маркелов А.В.</title>
-  <link rel="icon" type="image/x-icon" href="assets/interface/favicon.ico">
+  <link href="assets/interface/favicon.ico" rel="icon" type="image/x-icon">
   <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/ae090e8de5.js" crossorigin="anonymous"></script>
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/ae090e8de5.js"></script>
   <!-- Masonry Library -->
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <!-- Masonry Responsive + Go Up Button JS -->
-  <script src="scripts/masonry-resp+upBtn.js"></script>
+  <script src="scripts/reviews.js"></script>
 </head>
 <body>
 
   <!-- Go Up Button -->
   <button id="upBtn" title="Наверх">
-    <i class="fa-solid fa-chevron-up"></i>
+    <i class="fa-chevron-up fa-solid"></i>
+  </button>
+
+  <!-- Write Review Button -->
+  <button id="reviewBtn" title="Оставить отзыв">
+    <i class="fa-marker fa-solid"></i>
   </button>
 
   <!-- Header -->
   <nav id="header">
     <div class="logo">
-      <i class="fa-solid fa-graduation-cap"></i>
+      <i class="fa-graduation-cap fa-solid"></i>
       <span>РЕПЕТИТОР − МАРКЕЛОВ АРСЕНИЙ ВЛАДИМИРОВИЧ</span>
     </div>
     <ul>
@@ -36,7 +41,7 @@
       <!-- Local Header -->
       <!-- <li>
         <a href="index.html">
-          <i class="fa-solid fa-house-user"></i>
+          <i class="fa-house-user fa-solid"></i>
           <span>ГЛАВНАЯ</span>
         </a>
       </li>
@@ -48,7 +53,7 @@
       </li>
       <li>
         <a href="contacts.html">
-          <i class="fa-solid fa-phone"></i>
+          <i class="fa-phone fa-solid"></i>
           <span>КОНТАКТЫ</span>
         </a>
       </li> -->
@@ -56,7 +61,7 @@
       <!-- Web Header -->
       <li>
         <a href="https://vesselchuck.github.io">
-          <i class="fa-solid fa-house-user"></i>
+          <i class="fa-house-user fa-solid"></i>
           <span>ГЛАВНАЯ</span>
         </a>
       </li>
@@ -68,7 +73,7 @@
       </li>
       <li>
         <a href="https://vesselchuck.github.io/contacts">
-          <i class="fa-solid fa-phone"></i>
+          <i class="fa-phone fa-solid"></i>
           <span>КОНТАКТЫ</span>
         </a>
       </li>
@@ -76,8 +81,79 @@
     </ul>
   </nav>
 
+  
+  <button id="reviewCloseBtnOut"></button>
+
+  <!-- Form to Write Review -->
+  <section id="review-form">
+    <fieldset class="card" id="review-form-card">
+      <h2 class="title">Оставить отзыв</h2>
+
+      <!-- Close Review Button -->
+      <button id="reviewCloseBtn" title="Закрыть">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <form enctype="multipart/form-data" id="submit-review" method="post" action="https://formsubmit.co/d86f091bde85b19c9a5606d8fba2932f">
+
+        <div class="flex">
+
+          <div class="form-full-name">
+            <h3 class="title">
+              <label for="review-full-name">
+                <i class="fa-solid fa-user"></i>
+                Имя и Фамилия
+              </label>
+            </h3>
+            <div class="text">
+              <p>
+                <input required maxlength="40" placeholder="Иван&nbsp;Иванов" id="review-full-name" name="Имя&nbsp;и&nbsp;Фамилия" type="text">
+              </p>
+            </div>
+          </div>
+
+          <div class="form-photo">
+            <h3 class="title">
+              <label for="review-photo">
+                <i class="fa-image fa-solid"></i>
+                Фотография
+              </label>
+            </h3>
+            <div class="text">
+              <p>
+                <input accept="image/jpeg, image/png, image/webp" required type="file" name="Фотография" id="review-photo"> 
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-text">
+          <h3 class="title">
+            <label for="review-text">
+              <i class="fa-envelope-open-text fa-solid"></i>
+              Комментарий
+            </label>
+          </h3>
+          <div class="text">
+            <p>
+              <textarea required placeholder="Введите&nbsp;текст..." name="Отзыв" minlength="100" maxlength="480" id="review-text"></textarea>
+            </p>
+          </div>
+        </div>
+
+        <div class="text pos">
+          <p>
+            <input id="submit" type="submit">
+          </p>
+        </div>
+
+      </form>
+    </fieldset>
+  </section>
+
   <!-- Review Grid -->
-  <section id="main" class="grid">
+  <section class="grid" id="main">
     <div class="grid-sizer"></div>
     <div class="gutter-sizer"></div>  
 
@@ -88,7 +164,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/mariya.webp" alt="Фотография молодой девушки" title="Фотография ученицы">
+            <img alt="Фотография молодой девушки" class="avatar" src="assets/avatars/mariya.webp" title="Фотография ученицы">
           </figure>
           <h2 class="title">Мария Егорова</h2>
         </div>
@@ -104,7 +180,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/ilja.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/ilja.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Илья Чапчахов</h2>
         </div>
@@ -120,7 +196,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/elena-2.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученицы">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/elena-2.webp" title="Фотография мамы ученицы">
           </figure>
           <h2 class="title">Елена Терехова</h2>
         </div>
@@ -136,7 +212,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/vladimir.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/vladimir.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Владимир Воробьёв</h2>
         </div>
@@ -152,7 +228,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/liana.webp" alt="Фотография молодой девушки" title="Фотография ученицы">
+            <img alt="Фотография молодой девушки" class="avatar" src="assets/avatars/liana.webp" title="Фотография ученицы">
           </figure>
           <h2 class="title">Лиана Романова</h2>
         </div>
@@ -168,7 +244,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/alexander-2.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/alexander-2.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Александр Дегтярёв</h2>
         </div>
@@ -184,7 +260,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/evgeniya.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученицы">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/evgeniya.webp" title="Фотография мамы ученицы">
           </figure>
           <h2 class="title">Евгения Жук</h2>
         </div>
@@ -200,7 +276,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/luka.webp" alt="Фотография мужчины средних лет" title="Фотография папы ученика">
+            <img alt="Фотография мужчины средних лет" class="avatar" src="assets/avatars/luka.webp" title="Фотография папы ученика">
           </figure>
           <h2 class="title">Лука Балашов</h2>
         </div>
@@ -216,7 +292,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/nadya.webp" alt="Фотография молодой девушки" title="Фотография ученицы">
+            <img alt="Фотография молодой девушки" class="avatar" src="assets/avatars/nadya.webp" title="Фотография ученицы">
           </figure>
           <h2 class="title">Надя Астахова</h2>
         </div>
@@ -232,7 +308,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/natalia.webp" alt="Фотография молодой девушки" title="Фотография ученицы">
+            <img alt="Фотография молодой девушки" class="avatar" src="assets/avatars/natalia.webp" title="Фотография ученицы">
           </figure>
           <h2 class="title">Наталья Смирнова</h2>
         </div>
@@ -248,7 +324,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/julia.webp" alt="Фотография женщины средних лет" title="Фотография ученицы">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/julia.webp" title="Фотография ученицы">
           </figure>
           <h2 class="title">Юлия Лебедева</h2>
         </div>
@@ -266,7 +342,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/alina.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/alina.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Алина Суханова</h2>
         </div>
@@ -282,7 +358,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/olga.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/olga.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Ольга Левицкая</h2>
         </div>
@@ -298,7 +374,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/nikolay.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/nikolay.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Николай Спиридонов</h2>
         </div>
@@ -314,7 +390,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/julia-2.webp" alt="Фотография молодой девушки" title="Фотография ученицы">
+            <img alt="Фотография молодой девушки" class="avatar" src="assets/avatars/julia-2.webp" title="Фотография ученицы">
           </figure>
           <h2 class="title">Юлия Волкова</h2>
         </div>
@@ -330,7 +406,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/anna.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/anna.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Анна Фёдоровна</h2>
         </div>
@@ -346,7 +422,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/tala.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/tala.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Тала Демидова</h2>
         </div>
@@ -362,7 +438,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/alexander.webp" alt="Фотография мужчины средних лет" title="Фотография ученика">
+            <img alt="Фотография мужчины средних лет" class="avatar" src="assets/avatars/alexander.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Александр Хавронов</h2>
         </div>
@@ -378,7 +454,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/varvara.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/varvara.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Белоусова Варвара</h2>
         </div>
@@ -394,7 +470,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/ela.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/ela.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Эля Гилязова</h2>
         </div>
@@ -410,7 +486,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/bogdan.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/bogdan.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Богдан Морозов</h2>
         </div>
@@ -426,7 +502,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/tatyana.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/tatyana.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Татьяна Прохорова</h2>
         </div>
@@ -442,7 +518,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/madina.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/madina.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Мадина Валиева</h2>
         </div>
@@ -458,7 +534,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/nikita.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/nikita.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Никита Герасимов</h2>
         </div>
@@ -474,7 +550,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/anton.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/anton.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Антон Селиванов</h2>
         </div>
@@ -490,7 +566,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/maxim.webp" alt="Фотография мужчины средних лет" title="Фотография ученика">
+            <img alt="Фотография мужчины средних лет" class="avatar" src="assets/avatars/maxim.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Максим Голубев</h2>
         </div>
@@ -506,7 +582,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/yaroslav.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/yaroslav.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Ярослав Счастливый</h2>
         </div>
@@ -522,7 +598,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/klavdia.webp" alt="Фотография женщины средних лет" title="Фотография ученицы">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/klavdia.webp" title="Фотография ученицы">
           </figure>
           <h2 class="title">Клавдия Уткина</h2>
         </div>
@@ -538,7 +614,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/elena-3.webp" alt="Фотография женщины средних лет" title="Фотография ученицы">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/elena-3.webp" title="Фотография ученицы">
           </figure>
           <h2 class="title">Елена Исаева</h2>
         </div>
@@ -554,7 +630,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/diana.webp" alt="Фотография молодой девушки" title="Фотография ученицы">
+            <img alt="Фотография молодой девушки" class="avatar" src="assets/avatars/diana.webp" title="Фотография ученицы">
           </figure>
           <h2 class="title">Диана Фомичёва</h2>
         </div>
@@ -570,7 +646,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/sergey.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/sergey.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Сергей Иванов</h2>
         </div>
@@ -586,7 +662,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/mariya-2.webp" alt="Фотография женщины средних лет" title="Фотография ученицы">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/mariya-2.webp" title="Фотография ученицы">
           </figure>
           <h2 class="title">Мария Воронина</h2>
         </div>
@@ -602,7 +678,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/pavel.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/pavel.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Павел Лапин</h2>
         </div>
@@ -618,7 +694,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/ksenia.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученицы">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/ksenia.webp" title="Фотография мамы ученицы">
           </figure>
           <h2 class="title">Ксения Путинцева</h2>
         </div>
@@ -634,7 +710,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/azat.webp" alt="Фотография молодого парня" title="Фотография ученика">
+            <img alt="Фотография молодого парня" class="avatar" src="assets/avatars/azat.webp" title="Фотография ученика">
           </figure>
           <h2 class="title">Азат Батыршин</h2>
         </div>
@@ -650,7 +726,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/nadezhda.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/nadezhda.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Надежда Томская</h2>
         </div>
@@ -666,7 +742,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/svetlana.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/svetlana.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Светлана Куликова</h2>
         </div>
@@ -682,7 +758,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/elena.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/elena.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Елена Шевченко</h2>
         </div>
@@ -698,7 +774,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/ksenia-2.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученицы">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/ksenia-2.webp" title="Фотография мамы ученицы">
           </figure>
           <h2 class="title">Ксения Молокова</h2>
         </div>
@@ -714,7 +790,7 @@
       <div class="card-body">
         <div class="author">
           <figure>
-            <img class="avatar" src="assets/avatars/elena-4.webp" alt="Фотография женщины средних лет" title="Фотография мамы ученика">
+            <img alt="Фотография женщины средних лет" class="avatar" src="assets/avatars/elena-4.webp" title="Фотография мамы ученика">
           </figure>
           <h2 class="title">Елена Акшонова</h2>
         </div>
@@ -726,55 +802,5 @@
     </div>
 
   </section>
-  <!-- <section id="review-form">
-    <div id="review-form-card" class="card">
-
-      <div class="text">
-        <p class="info">Здесь Вы можете оставить свой отзыв о работе со мной.</p>
-      </div>
-
-      <form action="review-form.php" method="post" id="submit-review">
-
-        <div class="flex">
-          <div class="form-full-name">
-            <h3 class="title">
-              <i class="fa-solid fa-user"></i>
-              <span>Ваши Имя и Фамилия</span>
-            </h3>
-            <div class="text">
-              <p>
-                <input type="text" name="full-name" placeholder="Иван Иванов" maxlength="40">
-              </p>
-            </div>
-          </div>
-
-          <div class="form-photo">
-            <h3 class="title">
-              <i class="fa-solid fa-image"></i>
-              <span>Ваша фотография</span>
-            </h3>
-            <div class="text">
-              <p>
-                <input type="text" name="photo">
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-text">
-          <h3 class="title">
-            <i class="fa-solid fa-envelope-open-text"></i>
-            <span>Текст отзыва</span>
-          </h3>
-          <div class="text">
-            <p>
-              <textarea name="text" id="review-text" placeholder="Введите свой отзыв..."></textarea>
-            </p>
-          </div>
-        </div>
-
-      </form>
-    </div>
-  </section> -->
 </body>
 </html>
