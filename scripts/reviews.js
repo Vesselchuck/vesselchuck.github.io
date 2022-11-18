@@ -3,7 +3,8 @@ window.onload = function(){
   $('.grid').masonry({
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
-    gutter: '.gutter-sizer'
+    gutter: '.gutter-sizer',
+    percentPosition: true
   });
 
   // Go Up Button
