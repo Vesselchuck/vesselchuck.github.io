@@ -1,11 +1,14 @@
-window.onload = function(){
+$(window).on("load",function(){
   // Masonry Responsive
-  $('.grid').masonry({
-    itemSelector: '.grid-item',
-    columnWidth: '.grid-sizer',
-    gutter: '.gutter-sizer',
+  var $grid = $(".grid").masonry({
+    itemSelector: ".grid-item",
+    columnWidth: ".grid-sizer",
+    gutter: ".gutter-sizer",
     percentPosition: true
   });
+  
+  // trigger layout after all items are loaded
+  $grid.masonry('layout');
 
   // Go Up Button
   const upBtn = document.querySelector("#upBtn")
@@ -62,4 +65,4 @@ window.onload = function(){
   });
 
   // document.getElementById("review-date").valueAsDate = new Date();
-}
+})
