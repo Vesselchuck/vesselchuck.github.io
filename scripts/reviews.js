@@ -22,12 +22,18 @@ $(window).on("load",function(){
   window.onscroll = function() {scrollFunction()};
 
   function scrollFunction() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    if (document.body.scrollTop > 580 || document.documentElement.scrollTop > 580) {
       upBtn.style.display = "block";
     } else {
       upBtn.style.display = "none";
     }
   }
+
+  // Open Hamburger Menu
+  $("#openHamBtn").click(function(){
+      $("#openedHam").toggleClass("show");
+      $("#openedHamTitle").toggleClass("pos-title");
+  });
 
   // Write Review Button
   const reviewBtn = document.querySelector("#reviewBtn")

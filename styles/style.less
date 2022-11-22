@@ -14,7 +14,7 @@ body {
   background-color: #393D3F;
   box-shadow: 0px 12px 19px -7px rgba(0,0,0,.3);
   display: flex;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   height: 4rem;
   justify-content: space-around;
@@ -26,6 +26,58 @@ body {
     color: snow;
     flex-grow: 1;
     padding-left: 2rem;
+    .hamburger-menu {
+      background-color: transparent;
+      border: none;
+      color: snow;
+      cursor: pointer;
+      display: none;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: auto;
+      padding: 0;
+      text-align: center;
+      #openedHamTitle {
+        .HamTitle {
+          padding: 1.25rem 0;
+          transition: all .2s ease-in;
+          width: 14.3rem;
+        }
+        .HamTitle:hover {
+          color: #FFB86F;
+          text-shadow: 0 0 1.5rem #FFB86F;
+        }
+        .HamTitle:active {
+          color: hsl(30, 100%, 55%);
+          text-shadow: 0 0 1.5rem hsl(30, 100%, 55%);
+        }
+      }
+      .pos-title {
+        background-color: #393D3F;
+        border-radius: 0 0 0.5rem 0.5rem;
+        margin-top: 12.1rem;
+      }
+      ul {
+        display: none;
+        margin-bottom: 0;
+        margin-top: -0.1rem;
+        padding-left: 0;
+        transition: all .2s ease-in;
+      }
+      .show {
+        display: block;
+      }
+      li {
+        display: block;
+        padding: 0;
+        a {
+          box-sizing: border-box;
+          display: block;
+          padding: 1.2rem 1rem 1.2rem 1rem;
+        }
+      }
+    }
   }
   li {
     display: inline;
@@ -38,6 +90,10 @@ body {
     a:hover {
       color: #FFB86F;
       text-shadow: 0 0 1.5rem #FFB86F;
+    }
+    a:active {
+      color: hsl(30, 100%, 55%);
+      text-shadow: 0 0 1.5rem hsl(30, 100%, 55%);
     }
   }
   i {
@@ -485,6 +541,23 @@ blockquote {
   }
 }
 
+@media (max-width: 1023px) {
+  #header {
+    .logo {
+      padding-left: 0;
+      .main-logo {
+        display: none;
+      }
+      .hamburger-menu {
+        display: block;
+      }
+    }
+    .navigation-menu {
+      display: none;
+    }
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .grid-sizer,
   .grid-item {
@@ -492,12 +565,6 @@ blockquote {
   }
   .gutter-sizer {
     width: 1.95rem;
-  }
-  #header > div > span {
-    display: none;
-  }
-  #header > div::after {
-    content: "МАРКЕЛОВ А. В.";
   }
 }
 
@@ -508,16 +575,6 @@ blockquote {
   }
   .gutter-sizer {
     width: 1.95rem;
-  }
-  #header {
-    .logo {
-      span {
-        display: none;
-      }
-    }
-    .logo::after {
-      content: "МАРКЕЛОВ А. В.";
-    }
   }
 }
 
@@ -556,7 +613,7 @@ blockquote {
   }
 }
 
-@media (min-width: 320px) and (max-width: 359px) {
+@media (max-width: 359px) {
   .grid-sizer,
   .grid-item {
     width: 90%;
